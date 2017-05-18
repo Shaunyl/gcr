@@ -1,0 +1,60 @@
+html {
+	height: 92.5%;
+}
+
+div#sidebar {
+	display: none;
+	visible: hidden;
+}
+
+div#navigation {
+	display: none;
+	visible: hidden;
+}
+
+div#main {
+	width: 100%;
+	height: 92.5%;
+}
+
+body {
+	background-color: rgb(255, 255, 255);
+}
+
+div {
+	width: 100%;
+}
+
+.topbar {
+	line-height: 54px;
+	font-size: 24px;
+	font-family: 'Open Sans', sans-serif;
+	/*background: rgba(255, 255, 255, 0.8);*/
+	background: rgba(102, 179, 255, 0.8);
+	/*background-image: url("../images/logreg/GCR_icon.png");
+	background-repeat: no-repeat;
+	background-position: left;*/
+	box-shadow: 1px 0px 2px rgba(0,0,0,0.6);
+}
+
+.topbar img {
+	margin-top: 10px;
+}
+
+.topbar a {
+	padding: 0px 0px 0 10;
+	/*letter-spacing: 1px;*/
+	color: rgb(249, 249, 249);
+	display: inline-block;
+	text-decoration: none;
+}
+
+.bottombar {
+	line-height: 31px;
+	background: rgba(102, 179, 255, 0.8);
+	box-shadow: 1px -1px 2px rgba(0,0,0,0.4);
+	display: inline-block
+}
+
+
+

@@ -1,0 +1,63 @@
+th, td {
+
+	border: 1px solid black;
+}
+
+table {
+
+	border: 1px solid black;
+	width: 370px;
+}
+
+.star_rate_div {
+
+	border: 0px;
+	position: relative;
+	width: 130px;
+}
+
+div#disqus_thread {
+
+	position: relative;
+	left: 0px;
+	width: 500px;
+}
+
+div#maps_div {
+
+	position: relative;
+	width: 770px;
+}
+
+div#altitude_div {
+
+	position: relative;
+	width: 770px;
+}
+
+div#maps_links {
+
+	position: relative;
+	width: 770px;
+}
+
+div#links_footer {
+
+	position: relative;
+	width: 770px;
+}
+
+div#maps_add_event {
+	display: none;
+	position: fixed;
+	z-index: 1000;
+	border: 2px solid black;
+	width: 400px;
+	left: auto;
+	right: auto;
+}
+
+.close_button {
+	position: relative;
+	float: right;
+}

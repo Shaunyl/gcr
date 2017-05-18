@@ -1,0 +1,26 @@
+@import url('font-google.css');
+@import url('dashboard.css');
+
+.container_16 .grid, 
+.container_16 .grid .box {
+	width: 895px !important /* da cambiare solo que .. */
+}
+
+.gravatar-wrapper-56 {
+	padding: 0;
+	width: 56px;
+	height: 56px;
+	overflow: hidden;
+}
+
+img {
+    max-width: 100%;
+    height: auto;
+    width: auto\9; /* ie8 */
+}
+
+.user-details {
+	display: inline;
+	color: #888;
+	line-height: 17px;
+}

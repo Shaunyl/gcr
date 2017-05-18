@@ -1,0 +1,40 @@
+CREATE TABLE IF NOT EXISTS user (
+   user_id INT PRIMARY KEY AUTO_INCREMENT,
+   username VARCHAR(25) UNIQUE NOT NULL,
+   email VARCHAR(200) UNIQUE NOT NULL,
+   password CHAR(60) NOT NULL,
+   regdate TIMESTAMP DEFAULT CURRENT_TIMESTAMP NULL,
+   lastlogin TIMESTAMP NULL,
+   image VARCHAR(300) NULL,
+   gender ENUM('F', 'M') NULL,
+   birth DATE NULL,
+   realname VARCHAR(40) NULL,
+   website VARCHAR(200) NULL,
+   location VARCHAR(40) NULL,
+   aboutme VARCHAR(400) NULL,
+   level ENUM('user', 'admin') COLLATE utf8_unicode_ci NOT NULL DEFAULT 'user'
+) ENGINE = InnoDB DEFAULT CHARSET = utf8 COLLATE = utf8_unicode_ci;
+
+CREATE TABLE IF NOT EXISTS page (
+	page_id INT PRIMARY KEY AUTO_INCREMENT,
+	page VARCHAR(50) NOT NULL,
+	counter INT DEFAULT 0
+) ENGINE = InnoDB DEFAULT CHARSET = utf8 COLLATE = utf8_unicode_ci;
+
+CREATE TABLE IF NOT EXISTS visit (
+	visit_id INT PRIMARY KEY AUTO_INCREMENT,
+	visit_date DATE NOT NULL,
+	user_id INT NOT NULL,
+	FOREIGN KEY (user_id) REFERENCES user (user_id) ON DELETE CASCADE ON UPDATE CASCADE
+) ENGINE = InnoDB DEFAULT CHARSET = utf8 COLLATE = utf8_unicode_ci;
+
+CREATE TABLE IF NOT EXISTS page_visit (
+	page_id INT NOT NULL,
+	visit_id INT NOT NULL,
+	FOREIGN KEY (page_id) REFERENCES page (page_id) ON DELETE CASCADE ON UPDATE CASCADE,
+	FOREIGN KEY (visit_id) REFERENCES visit (visit_id) ON DELETE CASCADE ON UPDATE CASCADE
+) ENGINE = InnoDB DEFAULT CHARSET = utf8 COLLATE = utf8_unicode_ci;
+
+
+
+

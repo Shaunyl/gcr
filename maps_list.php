@@ -1,0 +1,36 @@
+<?php
+	if( session_id() == '' )
+	{
+		session_start();
+	}
+	
+	$directory = "";
+	
+	// code of page blocks
+	$page_elements_name = array 
+		(
+			"header" => $directory."header.php",
+			"navigation" => $directory."navigation.php",
+			"main" => $directory."maps_list_main.php",
+			"sidebar" => $directory."sidebar.php",
+			"footer" => $directory."footer.php"
+		);
+	$_SESSION["page_elements_name"] = $page_elements_name;
+	
+	$base_page = $directory."base.php";
+	$html_page = file_get_contents($base_page);
+	
+	
+	// adjust directory
+	$html_page = str_ireplace("\$directory = \"", "\$directory = \"".$directory,$html_page);
+	
+	$stylesheet = "css/maps.css";
+	if( $stylesheet != "" )
+	{
+		// add stylesheets
+		$html_page = str_ireplace("\$stylesheets = \"", "\$stylesheets = \"".
+		"<link href='$directory$stylesheet' rel='stylesheet' type='text/css' />", $html_page);
+	}
+	
+	eval(" ?>" . $html_page . " <?php ");
+?>
